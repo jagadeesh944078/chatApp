@@ -1,0 +1,29 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+<div class="container">
+  <br>
+  <form id='messageForm'>
+  <h1 class="display4">start chating</h1>
+  <br>
+  <input id="textname" type="text" class="from-control" placeholder="name">
+  <input id="textmsg" type="text" class="from-control" placeholder="message">
+  <button id="send" class="btn btn-primary" value="send message">send</button> 
+<div id="messages"></div>
+</div>
+</form>
+<script>
+
+  $(function(){
+
+var socket=io.connect();
+var $messageForm=$('#messageForm');
+var $message=$('#message');
+var $chat=$('chat');
+$messageForm.submit(function(e){
+  e.preventDefault();
+  socket.emit('send message',$message.val());
+  $message.val('');
+})
+  })
+</script>>

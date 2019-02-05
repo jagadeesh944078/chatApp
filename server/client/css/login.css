@@ -1,0 +1,20 @@
+
+form{
+width: 20%;
+margin: 0 auto;
+}
+input[type=text],input[type=password]{
+background-color: lightpink;
+border:1px solid tomato;
+width: 100%;
+}
+input[type=checkbox]{
+width: 10px;
+border:1px solid tomato;
+}
+input[type=submit]{
+background-color: green;
+color: white;
+         border:1px solid green;
+          border-radius: 5px;
+}

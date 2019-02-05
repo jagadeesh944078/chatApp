@@ -1,0 +1,25 @@
+
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.signup{
+width: 20%;
+margin: 0 auto;
+}
+input[type=text],input[type=password],input[type=email]{
+background-color: lightpink;
+border:1px solid tomato;
+width: 100%;
+}
+input[type=checkbox]{
+width: 10px;
+border:1px solid tomato;
+}
+input[type=submit]{
+background-color: green;
+color:black;
+         border:1px solid green;
+          border-radius: 5px;
+}

@@ -1,0 +1,45 @@
+<body bgcolor="black">
+<header style="background-color:#39e600;height:50px;width: 100%;">
+</header>
+<center>
+    <h1 style="color: red;">chat app!</h1>
+</center>
+<form name="myForm">
+   firstname
+    <input type="text" ng-model="firstname" placeholder="enter firstname" autocomplete="off" required>
+    <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span>
+    Last Name
+    <input type="text" ng-model="lastname" placeholder="enter lastname" autocomplete="off">
+    <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span></p>
+    E-Mail
+    <input type="email" ng-model="email" placeholder="enter E-Mail" autocomplete="off">
+    <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The mail is required.</span></p>
+    Password
+    <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off">
+    <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The password is required.</span></p>
+    
+    <input type="checkbox" name="terms">Agree To <a href="#"><u>Terms & Conditions</u></a><br><br>
+
+    <button ng-click=register()>register</button>
+    <a ui-sref="login">signin</a>
+    </form>
+    </form>
+    </a>
+</form>
+</body>
+<script>
+    $(function(){
+    $("#register").on('click', function(event){
+        event.preventDefault();
+        var firstname   = $("#firstname").val();
+        var lastname    = $("#lastname").val();
+        var email   = $("#email").val();
+        var password  = $("#password").val();
+        if(!firstname || !email || !password || !lastname){ 
+            $("#msgDiv").show().html("All fields are required.");
+        } else if(cpassword != password){
+            $("#msgDiv").show().html("Passowrds should match.");
+        }
+    });
+    });
+</script>

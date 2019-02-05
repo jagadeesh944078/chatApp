@@ -1,0 +1,24 @@
+
+    <header style="background-color:#39e600;height:50px;width: 100%;">
+    </header>
+    <center>
+        <h1 style="color: tomato;">chat app!</h1>
+    </center>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+    <form action="#" method="#">
+        <p>user Name
+            <input type="text" ng-model="username" placeholder="enter firstname" autocomplete="off">
+            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span></p>
+        <p>Password
+            <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off">
+            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The password is required.</span></p><br><br>
+        <button ng-click=login()>login</button>
+        <a ui-sref="register">Create an account</a>
+    </form>
+</div>
+</div>
+    </form>
+
+

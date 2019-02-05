@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>project1</title>
+    <link rel="stylesheet" type="text/css" href="project1.css">
+    <style>
+        form{
+width: 20%;
+margin: 0 auto;
+}
+input[type=text],input[type=password]{
+background-color: lightpink;
+border:1px solid tomato;
+width: 100%;
+}
+input[type=checkbox]{
+width: 10px;
+border:1px solid tomato;
+}
+input[type=submit]{
+background-color: green;
+color: white;
+         border:1px solid green;
+          border-radius: 5px;
+}
+</style>
+</head>
+
+<body style="margin: 0;padding: 0;" ng-app="">
+    <header style="background-color:#39e600;height:50px;width: 100%;">
+    </header>
+    <center>
+        <h1 style="color: tomato;">chat app!</h1>
+    </center>
+    <form action="#" method="#">
+        <p>mail
+            <input type="text" ng-model="first name" placeholder="enter firstname" autocomplete="off">
+            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span></p>
+        
+        <button ng-click="">forgot password</button>
+    </form>
+
+</body>
+
+</html>
