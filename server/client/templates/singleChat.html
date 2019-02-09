@@ -1,0 +1,44 @@
+<!-- <body background=/home/admin1/Downloads/recover-whatsapp-images-photos.jpg>
+  <div class="sidenav">
+    <a href='#'>jagadeesh</a>
+    <a href='#'>bharath</a>
+    <a href='#'>shiva</a>
+    <a href='#'>hithesh</a>
+    <button ng-click=login()>logout</button>
+  </div>
+</body> -->
+<html>
+
+<head>
+    <title>ChatApplication </title>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" />
+
+</head>
+
+<body class="dashBody" ng-controller="chatControl">
+    <button type="button" class="logoutButton" ng-click="logOut()">Logout</button>
+    <div class="allUsers">
+        <center>
+            <h2> All Users </h2>
+        </center>
+        <hr>
+        <p ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName != x.firstname">
+            {{x.firstname}}</p>
+    </div>
+    <div class="main">
+    </div>
+    <div class="chatBox">
+        <div class="groupChat">
+               
+            <p class="usernamecss">Welcome {{currUserName}}</p>
+        </div>
+        <div class="chatLogs">
+            <button ng-click="welcomeMsg()">welcome</button>
+            {{msg}}
+        </div>
+       
+    </div>
+    </script>
+</body>
+
+</html>

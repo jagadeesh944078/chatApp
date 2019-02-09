@@ -9,18 +9,18 @@
     <input type="text" ng-model="firstname" placeholder="enter firstname" autocomplete="off" required>
     <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span>
     Last Name
-    <input type="text" ng-model="lastname" placeholder="enter lastname" autocomplete="off">
+    <input type="text" ng-model="lastname" placeholder="enter lastname" autocomplete="off" required>
     <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span></p>
     E-Mail
-    <input type="email" ng-model="email" placeholder="enter E-Mail" autocomplete="off">
+    <input type="email" ng-model="email" placeholder="enter E-Mail" autocomplete="off" required>
     <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The mail is required.</span></p>
     Password
-    <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off">
+    <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off" required>
     <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The password is required.</span></p>
     
     <input type="checkbox" name="terms">Agree To <a href="#"><u>Terms & Conditions</u></a><br><br>
 
-    <button ng-click=register()>register</button>
+    <button ng-disabled="myForm.$invalid" ng-click=register()>register</button>
     <a ui-sref="login">signin</a>
     </form>
     </form>

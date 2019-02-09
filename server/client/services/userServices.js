@@ -34,14 +34,14 @@ $http({
     data:data
 }).then(
     function successCallback(response){
-        console.log("register successful");
+        console.log("login successful");
         console.log(response);
         $scope.message="register successful"
-        $location.path('./dashboard')
+        $location.path('dashboard')
     },
     function errorCallback(response){
-        console.log("register unsuccessful",response);
-       // $scope.message =response.data.message.message;
+        console.log("login unsuccessful",response);
+       //$scope.message =response.data.message.message;
 
 
     }

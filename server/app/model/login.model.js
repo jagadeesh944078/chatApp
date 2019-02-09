@@ -7,16 +7,8 @@ userModel.prototype.save=(data,callback)=>{
     console.log(data);
 
 var newData=new user1(data);
-newData.save((err,result)=>{
-if(err){
-    callback(err)
-}
-else{
-    callback(result)
-}
-})
-var findPeopleByName = function(firstname, done) {
-    user.find({"username":firstname},(err,data)=>{
+var findPeopleByName = function(email, data) {
+    user.find({"username":email,"password":password},(err,data)=>{
     if(err) 
     {callback(err)}
     else{
@@ -24,13 +16,5 @@ var findPeopleByName = function(firstname, done) {
       })  
     
     };
-    var findPeopleByName = function(password, done) {
-        user.find({"password":password},(err,data)=>{
-        if(err){ callback(err)}
-          
-        else{
-            callback(data)
-                  }          })  
-        
-        };
+ 
 }

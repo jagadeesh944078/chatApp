@@ -16,3 +16,22 @@ exports.registration = (req, res) => {
         }
     })
 }
+
+exports.login = (req, res) => {
+var responseresult={}
+console.log(req.body);
+userServices.login(req.body,(err,result)=>{
+if(err){
+    responseresult.sucess=false;
+    responseresult.err=err;
+    res.status(500).send(responseresult);
+}
+else{
+    responseresult.sucess=true;
+    responseresult.result=result;
+    res.status(201).send(responseresult);
+}
+
+})
+
+}

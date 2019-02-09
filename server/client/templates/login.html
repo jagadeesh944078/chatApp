@@ -7,14 +7,14 @@
     <div class="login-page">
         <div class="form">
           <form class="login-form">
-    <form action="#" method="#">
+    <form action="#" method="#" ng-app="DemoApp" ng-controller="democontroller" name="myForm" novalidate>
         <p>user Name
-            <input type="text" ng-model="username" placeholder="enter firstname" autocomplete="off">
-            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span></p>
+            <input type="email" ng-model="username" placeholder="enter firstname" autocomplete="off" required>
+            <span ng-show="myForm.username.$touched && myForm.username.$invalid">The name is required.</span></p>
         <p>Password
-            <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off">
-            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The password is required.</span></p><br><br>
-        <button ng-click=login()>login</button>
+            <input type="Password" ng-model="password" placeholder="enter password" autocomplete="off" required>
+            <span ng-show="myForm.password.$touched && myForm.password.$invalid">The password is required.</span></p><br><br>
+        <button ng-disabled="myForm.username.$invalid && myForm.username.$dirty" ng-click=login()>login</button>
         <a ui-sref="register">Create an account</a>
     </form>
 </div>

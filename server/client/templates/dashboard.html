@@ -1,29 +1,67 @@
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
+<body background=/home/admin1/Downloads/recover-whatsapp-images-photos.jpg>
 <div class="container">
-  <br>
-  <form id='messageForm'>
-  <h1 class="display4">start chating</h1>
-  <br>
-  <input id="textname" type="text" class="from-control" placeholder="name">
-  <input id="textmsg" type="text" class="from-control" placeholder="message">
-  <button id="send" class="btn btn-primary" value="send message">send</button> 
-<div id="messages"></div>
-</div>
-</form>
-<script>
+  <div id="userFormArea" class="row">
+    <div class="col-md-12">
+       
+    </div>
+  </div>
+  <div id="messageArea"class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <h3>online users</h3>
+          <ul class="list-group" id="users"></ul>
 
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="chat" id="chat"></div>
+      <form id="messageForm">
+          <div class="form-group">
+            <label>enter message</label>
+            <textarea class="from-control" id="message"></textarea>
+            <br/>
+            <input type="submit" class="btn btn-primary" value="send"/>
+            <input type ="submit" class="btn btn-primary" value="logout"/>
+          </form>
+    </div>
+  </div>
+</div>
+<script>
   $(function(){
 
 var socket=io.connect();
 var $messageForm=$('#messageForm');
 var $message=$('#message');
-var $chat=$('chat');
+var $chatapp=$('#chatapp');
+var $messageArea=$('messageArea');
+var $userFormArea=$('userFormArea');
+var $userForm=$('#userForm');
+var $users=$('#users');
+var $username=$('#username');
 $messageForm.submit(function(e){
-  e.preventDefault();
-  socket.emit('send message',$message.val());
-  $message.val('');
+e.preventDefault();
+socket.emit('send message',$message.val());
+$message.val('');
+});
+socket.on('new message',function(data){
+ $chat.append('<div class="well">'+data.msg+'<div>');
+});
+  });$userForm.submit(function(e){
+e.preventDefault();
+socket.emit('new user',$username.val(),function(data){
+  if(data){
+    $userFormArea.hide();
+$messageArea.show();
+  }
+});
+$username.val('');
+});
+socket.on('get users',function(data){
+  for(i=0;i<data.length;i++){
+    html+='<li class="list-group-item">'+data[i]+'</li>'
+    ;
+  }
+  $users.html(html);
 })
-  })
-</script>>
+  </script>
+  </body>

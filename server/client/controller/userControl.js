@@ -17,7 +17,7 @@ app.controller('userControl', function ($scope, userServices) {
 
     $scope.login = function () {
         var data = {
-            'username': $scope.username,
+            'email': $scope.username,
             'password': $scope.password
         }
         userServices.login(data, $scope);
